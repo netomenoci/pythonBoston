@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 
 
 def trade_spider (max_page):
-    page = 1
+    page = 2
     linksDell = open('links.txt', 'w')
     while page <= max_page :
         url = 'http://sp.olx.com.br/?o=' + str(page) + '&q=notebook'
@@ -17,7 +17,7 @@ def trade_spider (max_page):
             if (str(title)).lower().find('dell') != -1:
                 linksDell.write(title + ' ' + href + '\n')
                 print(title + '\n')
-        page += 10
+        page += 1
 
-trade_spider(1)
+trade_spider(10)
 
